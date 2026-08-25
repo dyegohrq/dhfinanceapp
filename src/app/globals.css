@@ -122,7 +122,9 @@ body {
 }
 
 @theme {
+  --color-grey-500: #696868;
   --color-grey-900: #201f24;
+  --color-red: #C94736;
 }
 
 @layer base {
@@ -135,4 +137,21 @@ body {
   html {
     @apply font-sans;
   }
+}
+
+.present-1 {
+  @apply font-bold text-[32px] tracking-normal leading-[120%];
+}
+
+.present-4 {
+  @apply font-medium text-[14px] tracking-normal leading-[150%];
+}
+.present-4-bold {
+  @apply font-bold text-[14px] tracking-normal leading-[150%];
+}
+.present-5 {
+  @apply font-medium text-[12px] tracking-normal leading-[150%];
+}
+.present-5-bold {
+  @apply font-bold text-[12px] tracking-normal leading-[150%];
 }

@@ -7,7 +7,7 @@ import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 
-export const {} = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma) as Adapter,
   trustHost: true,
   session: {
@@ -69,14 +69,6 @@ export const {} = NextAuth({
         if (existingUser) {
           return true;
         }
-
-        await prisma.user.create({
-          data: {
-            email,
-            name: user.name ?? "Usuário",
-            image: user.image ?? null,
-          },
-        });
 
         return true;
       }
