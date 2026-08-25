@@ -38,7 +38,7 @@ export function LoginContent() {
   }
   return (
     <>
-      <Card className="w-full max-w-140">
+      <Card className="w-full  max-w-140 flex-1">
         <CardHeader>
           <CardTitle>Entrar</CardTitle>
         </CardHeader>
@@ -108,7 +108,7 @@ export function LoginContent() {
             <span className=" present-4 text-grey-500 ">
               Precisa criar uma conta ?{" "}
               <Link
-                href={"/signout"}
+                href={"/signup"}
                 className=" font-bold text-grey-900 hover:underline transition-all duration-300 "
               >
                 Criar conta

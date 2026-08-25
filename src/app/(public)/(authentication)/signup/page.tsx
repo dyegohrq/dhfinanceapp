@@ -1,15 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import { LoginContent } from "../_components/form/login-content";
 import { Header } from "../_components/header";
 import IllustrationImage from "@/../public/loginAndSignupIllustrationImage.svg";
 import logo from "@/../public/Logo.png";
+import { SignupContent } from "../_components/form/signup-content";
 
-export default function Login() {
+export default function Signup() {
   return (
     <>
       <Header />
       <main className=" w-full h-[calc(100vh-70px)] lg:h-full flex items-center px-4 md:px-0 gap-5 lg:pr-10 ">
-        <div className=" hidden lg:flex relative flex-1 max-w-200 h-screen  ">
+        <div className=" hidden lg:flex relative flex-1 max-w-200 h-screen ">
           <Image
             src={IllustrationImage}
             alt="Login and signup Illustration Image"
@@ -21,7 +23,7 @@ export default function Login() {
             alt="Logo Dh|FinanceApp"
             className="absolute top-10 left-5 "
           />
-          <div className=" absolute bottom-0 w-full max-w-150 xl:max-w-180 flex flex-col gap-4 px-5 xl:px-25 pb-10  ">
+          <div className=" absolute bottom-0 w-full max-w-150 xl:max-w-180 flex flex-col gap-4 px-5 xl:px-25 pb-10 ">
             <h1 className=" present-1 text-white ">
               Acompanhe seu dinheiro e economize para o seu futuro
             </h1>
@@ -32,9 +34,7 @@ export default function Login() {
             </p>
           </div>
         </div>
-        <div className=" w-full h-full flex items-center justify-center flex-1 " >
-          <LoginContent />
-        </div>
+        <SignupContent />
       </main>
     </>
   );
