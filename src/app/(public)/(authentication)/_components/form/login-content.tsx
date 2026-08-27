@@ -181,14 +181,14 @@ export function LoginContent() {
           <div className=" flex flex-col md:flex-row gap-3 ">
             <Button
               type="button"
-              onClick={() => signIn("google", { redirectTo: "/dashboard" })}
+              onClick={() => signIn("google", { redirectTo: "/overview" })}
               className={"px-5 py-4 md:py-5 flex-1"}
             >
               <FcGoogle />
               Entrar com o Google
             </Button>
             <Button
-              onClick={() => signIn("github", { redirectTo: "/dashboard" })}
+              onClick={() => signIn("github", { redirectTo: "/overview" })}
               className={"px-5 py-4 md:py-5 flex-1"}
             >
               <FaGithub />
