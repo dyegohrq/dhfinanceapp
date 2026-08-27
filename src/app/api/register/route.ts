@@ -11,12 +11,20 @@ export async function POST(request: Request) {
       .trim()
       .toLowerCase(); // transforma em string, retira os espaços e deixa tudo em minusculo
     const password = String(body.password ?? "");
+    const confirmPassword = String(body.confirmPassword ?? "");
 
     if (!email || !password) {
       // Verifica se tem um email e senha
       return NextResponse.json(
         { error: "Email e senha são obrigatórios" }, // caso não tenha retorna mensagem de erro
         { status: 400 }, // com o status 400 de badrequest
+      );
+    }
+
+    if (password !== confirmPassword) {
+      return NextResponse.json(
+        { error: "As senhas não conferem." },
+        { status: 400 },
       );
     }
 

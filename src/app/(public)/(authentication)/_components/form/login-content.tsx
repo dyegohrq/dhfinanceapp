@@ -17,27 +17,85 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { signIn } from "next-auth/react";
+import { Slide, toast, ToastContainer } from "react-toastify";
 
 export function LoginContent() {
   const form = useLoginForm();
   const [visiblePassword, setVisiblePassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   async function onSubmit(formData: LoginSchema) {
-    const result = await signIn("credentials", {
-      email: formData.email,
-      password: formData.password,
-      redirect: false, //O redirect: false permite que você trate o erro na própria tela.
+    const toastId = toast.loading("Entrando...", {
+      position: "top-right",
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+      transition: Slide,
     });
 
-    if (result?.error) {
-      console.error("Email ou senha inválidos");
-      return;
-    }
+    try {
+      setLoading(true);
+      const result = await signIn("credentials", {
+        email: formData.email,
+        password: formData.password,
+        redirect: false, //O redirect: false permite que você trate o erro na própria tela.
+      });
 
-    window.location.href = "/dashboard";
+      if (result?.error) {
+        toast.update(toastId, {
+          render: "Email ou senha inválidos",
+          type: "error",
+          isLoading: false,
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Slide,
+        });
+        return;
+      }
+
+      toast.update(toastId, {
+        render: "Login realizado com sucesso!",
+        type: "success",
+        isLoading: false,
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
+
+      window.location.href = "/overview";
+    } catch {
+      toast.update(toastId, {
+        render: "Não foi possível entrar agora.",
+        type: "error",
+        isLoading: false,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
+    } finally {
+      setLoading(false);
+    }
   }
+
   return (
     <>
+      <ToastContainer />
       <Card className="w-full  max-w-140 flex-1">
         <CardHeader>
           <CardTitle>Entrar</CardTitle>

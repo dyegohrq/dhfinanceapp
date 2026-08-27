@@ -10,7 +10,7 @@ export default function Signup() {
   return (
     <>
       <Header />
-      <main className=" w-full h-[calc(100vh-70px)] lg:h-full flex items-center px-4 md:px-0 gap-5 lg:pr-10 ">
+      <main className=" w-full h-[calc(100vh-70px)] lg:h-full flex items-center px-4 md:px-0 gap-5 lg:pr-10">
         <div className=" hidden lg:flex relative flex-1 max-w-200 h-screen ">
           <Image
             src={IllustrationImage}
@@ -34,7 +34,9 @@ export default function Signup() {
             </p>
           </div>
         </div>
-        <SignupContent />
+        <div className="w-full h-full flex items-center justify-center flex-1">
+          <SignupContent />
+        </div>
       </main>
     </>
   );
