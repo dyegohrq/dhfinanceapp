@@ -122,9 +122,13 @@ body {
 }
 
 @theme {
+  --color-grey-300: #B3B3B3;
   --color-grey-500: #696868;
   --color-grey-900: #201f24;
+  --color-beige-100: #F8F4F0;
+
   --color-red: #C94736;
+  --color-green: #277c78
 }
 
 @layer base {
@@ -137,6 +141,10 @@ body {
   html {
     @apply font-sans;
   }
+}
+
+button {
+  cursor: pointer
 }
 
 .present-1 {
@@ -154,4 +162,8 @@ body {
 }
 .present-5-bold {
   @apply font-bold text-[12px] tracking-normal leading-[150%];
+}
+
+.transition {
+  @apply transition-all duration-300
 }
