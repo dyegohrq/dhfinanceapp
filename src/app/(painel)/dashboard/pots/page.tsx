@@ -1,3 +1,9 @@
+import { PotsContent } from "./_components/potsContent";
+
 export default function Pots() {
-  return <h1>Pots</h1>;
+  return (
+    <>
+      <PotsContent />
+    </>
+  );
 }

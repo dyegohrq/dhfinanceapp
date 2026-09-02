@@ -50,6 +50,7 @@ export const MENULINKS: MENULINKSPROPS[] = [
 ];
 
 export function getMenuLinks(pathname: string) {
+
   return MENULINKS.map((item) => ({
     ...item,
     isActive: pathname === item.href ? true : false,

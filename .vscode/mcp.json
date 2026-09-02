@@ -1,0 +1,25 @@
+{
+	"servers": {
+		"context7": {
+			"type": "stdio",
+			"command": "cmd",
+			"args": [
+				"/c",
+				"npx",
+				"-y",
+				"@upstash/context7-mcp",
+				"--api-key",
+				"ctx7sk-f00f0cfc-8917-4641-b4ff-85073d0d13d6"
+			]
+		},
+		"my-mcp-server-5ab0160a": {
+			"url": "http://localhost:3000",
+			"type": "http"
+		},
+		"my-mcp-server-05f1131b": {
+			"url": "https://mcp.vercel.com",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}

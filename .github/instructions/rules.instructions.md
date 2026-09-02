@@ -1,14 +1,9 @@
 ---
-description: 
-globs: 
-alwaysApply: true
+description: Describe when these instructions should be loaded by the agent based on task context
+applyTo: '**'
 ---
----
-description: How to add or edit Cursor rules in our project
-globs:
-alwaysApply: false
----
-# Cursor Rules Location
+
+<!-- Tip: Use /create-instructions in chat to generate content with agent assistance -->
 
 How to add new cursor rules to the project
 
@@ -69,4 +64,3 @@ function badExample() {
   // Implementation not following guidelines
 }
 ```
-
